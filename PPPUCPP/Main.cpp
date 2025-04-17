@@ -6,7 +6,7 @@ import std;						// Gain access to the C++ standard library (Importing the iostr
 #include "AdditionalTools.h"	// Adds the capability of using "TRACE_FUNCTION" to print the function name at the start and end of it being called.
 
 // This is a dummy function to showcase the basic types in C++
-void Basics() // not in the book 
+void Basics() // not in the book
 {
 	TRACE_FUNCTION;
 
