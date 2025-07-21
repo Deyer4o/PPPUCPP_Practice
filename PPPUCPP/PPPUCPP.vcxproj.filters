@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Section1">
+      <UniqueIdentifier>{81f10fa8-cefd-4078-a70c-244df5703ef7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -22,6 +25,36 @@
   <ItemGroup>
     <ClInclude Include="AdditionalTools.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter1.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter2.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter3.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter4.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter5.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter7.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter8.h">
+      <Filter>Header Files\Section1</Filter>
+    </ClInclude>
+    <ClInclude Include="Section1.h">
+      <Filter>Header Files\Section1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

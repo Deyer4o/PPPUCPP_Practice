@@ -3,6 +3,7 @@
 
 #pragma once // Makes sure this is included only once
 import std; // Gain access to the C++ standard library (Importing the iostream module for input and output operations)
+#include "Includes.h"
 
 const char* _curNamespace = "";
 
