@@ -1,6 +1,8 @@
 #pragma once
 
-#define ENABLE_TRACE
+bool ENABLE_TRACE_BOOL = false;
+#define ENABLE_TRACE ENABLE_TRACE_BOOL = true; TRACE_FUNCTION; USING_S1_NAMESPACES;
+
 
 import std;						// Gain access to the C++ standard library (Importing the iostream module for input and output operations
 //#include "AdditionalTools.h"	// Adds the capability of using "TRACE_FUNCTION" to print the function name at the start and end of it being called.

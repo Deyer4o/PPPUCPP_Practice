@@ -70,29 +70,6 @@ namespace Chapter2
 	}
 
 
-	// This asks for a floating-point value and prints various calculations with it
-	// [Objects, Types and Values / 2.4 Operations and operators]
-	// Page 35
-	void p35_OperatorsExercise()
-	{
-		TRACE_FUNCTION;
-		using namespace std;
-
-		cout << "Please enter a floating-point value: ";
-		double n = 0;
-		cin >> n;
-		cout << "n == " << n
-			<< "\nn+1 == " << n + 1
-			<< "\nthree times n == " << 3 * n
-			<< "\ntwice n == " << n + n
-			<< "\nn squared == " << n * n
-			<< "\nhalf of n == " << n / 2
-			<< "\nsquare root of n == " << sqrt(n)
-			<< '\n';
-
-	}
-
-
 	// This asks for a user's birthday, calculates their age in years, months and days, and prints it
 	// [Objects, Types and Values / Input and type]
 	// Page 34 - an additional function, not in the book
@@ -164,6 +141,157 @@ namespace Chapter2
 		cout << "total seconds: \t" << (years * 365 * 24 * 60 * 60 + months * 30 * 24 * 60 * 60 + days * 24 * 60 * 60) << " seconds" << endl; // Approximation, not accounting for leap years
 		return;
 	}
+
+
+
+	// This asks for a floating-point value and prints various calculations with it
+	// [Objects, Types and Values / 2.4 Operations and operators]
+	// Page 35
+	void p35_OperatorsExercise()
+	{
+		TRACE_FUNCTION;
+		using namespace std;
+
+		cout << "Please enter a floating-point value: ";
+		double n = 0;
+		cin >> n;
+		cout << "n == " << n
+			<< "\nn+1 == " << n + 1
+			<< "\nthree times n == " << 3 * n
+			<< "\ntwice n == " << n + n
+			<< "\nn squared == " << n * n
+			<< "\nhalf of n == " << n / 2
+			<< "\nsquare root of n == " << sqrt(n)
+			<< '\n';
+
+	}
+
+	// This asks for an integer value and prints various calculations with it
+	// [Objects, Types and Values / 2.4 Operations and operators]
+	// Page 36
+	void p36_TRYTHIS_INT_OperatorsExercise()
+	{
+		TRACE_FUNCTION;
+		using namespace std;
+
+		cout << "Please enter an integer value: ";
+		int n = 0;
+		cin >> n;
+		cout << "n == " << n
+			<< "\nn+1 == " << n + 1
+			<< "\nthree times n == " << 3 * n
+			<< "\ntwice n == " << n + n
+			<< "\nn squared == " << n * n
+			<< "\nhalf of n == " << n / 2
+			<< "\nsquare root of n == " << sqrt(n)
+			<< "\nmodulo(2) of n == " << n % 2
+			<< "\nn/2 * 2 + n%2 == " << n / 2 * 2 + n % 2
+			<< '\n';
+
+	}
+
+	// This asks for the first and second names of the user and prints a greeting
+	// [Objects, Types and Values / 2.4 Operations and operators]
+	// Page 36
+	void p36_ReadFirstAndSecondName() // read first and second name
+	{
+		TRACE_FUNCTION;
+
+		cout << "Please enter your first and second names\n";
+		string first;
+		string second;
+		cin >> first >> second; // read two strings
+		string name = first + ' ' + second; // concatenate strings
+		cout << "Hello, " << name << '\n';
+	}
+
+
+	// This reads two names and compares them alphabetically
+	// [Objects, Types and Values / 2.4 Operations and operators]
+	// Page 36
+	void p36_ReadAndCompareNames() // read and compare names
+	{
+		TRACE_FUNCTION;
+
+		cout << "Please enter two names\n";
+		string first;
+		string second;
+		cin >> first >> second; // read two strings
+		if (first == second)
+			cout << "that's the same name twice\n";
+		if (first < second)
+			cout << first << " is alphabetically before " << second << '\n';
+		if (first > second)
+			cout << first << " is alphabetically after " << second << '\n';
+	}
+
+
+	// This reads a stream of words and detects repeated words
+	// [Objects, Types and Values / 2.5.1 An Example: detect repeated words]
+	// Page 38
+	void p38_DetectRepeatedWords()
+	{
+		TRACE_FUNCTION;
+
+		string previous; // previous word; initialized to ""
+		string current; // current word
+		while (cin >> current) { // read a stream of words
+			if (previous == current) // check if the word is the same as last
+				cout << "repeated word: " << current << '\n';
+			previous = current;
+		}
+
+		/*
+		std::cin reads words one by one (split by whitespace) from the 
+		line-buffered input after you press Enter. The while loop processes
+		each word sequentially, potentially running multiple times per 
+		Enter press, depending on how many words are in the input line.
+		*/
+
+	}
+
+
+	// This reads a stream of words and detects repeated words with their count
+	// [Objects, Types and Values / 2.5.3 An Example: find repeated words]
+	// Page 40
+	void p40_DetectRepeatedWordsWithCount()
+	{
+		TRACE_FUNCTION;
+
+		int number_of_words = 0;
+		string previous; // previous word; initialized to ""
+		string current;
+		while (cin >> current) {
+			++number_of_words; // increase word count - composite assignment opperator
+			if (previous == current)
+				cout << "word number " << number_of_words << " repeated: " << current << '\n';
+			previous = current;
+		}
+	}
+
+
+	// 
+	// [Objects, Types and Values / 2.6 Names]
+	// Page 41
+	void p41_TRYTHIS_Print()
+	{
+		TRACE_FUNCTION;
+		
+	/*
+	int Main() //main
+	{
+	STRING s = "Hello, beautiful world! "; //string
+	cOut << S << '\n';// cout, s
+	}
+	*/
+
+		string s = "Hello, beautiful world! "; //string- not STRING
+		cout << s << '\n';// cout - not cOut , s - not S
+
+
+	}
+
+
 
 	// This is a dummy function to showcase the basic types in C++
 	// not necessarily in the book
