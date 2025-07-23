@@ -56,5 +56,8 @@
     <ClInclude Include="Section1.h">
       <Filter>Header Files\Section1</Filter>
     </ClInclude>
+    <ClInclude Include="std_lib_facilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

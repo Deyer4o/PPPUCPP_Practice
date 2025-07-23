@@ -270,7 +270,7 @@ namespace Chapter2
 	}
 
 
-	// 
+	// This prints a string to the console
 	// [Objects, Types and Values / 2.6 Names]
 	// Page 41
 	void p41_TRYTHIS_Print()
@@ -288,6 +288,64 @@ namespace Chapter2
 		string s = "Hello, beautiful world! "; //string- not STRING
 		cout << s << '\n';// cout - not cOut , s - not S
 
+	}
+	
+
+	// This is commented dummy code to showcase the use of uninitialized variables
+	// [Objects, Types and Values / 2.8 Type Safety]
+	// Page 44
+	void p44_UninitializedVariable()
+	{
+		TRACE_FUNCTION;
+
+		// Uninitialized variables can lead to undefined behavior in C++
+		/*
+		double x; // we "forgot" to initialize: the value of x is undefined
+		double y = x; // the value of y is undefined
+		double z = 2.0 + x; // the meaning of + and the value of z are undefined
+		*/
+	}
+
+
+	// This showcases the use of conversions between types
+	// [Objects, Types and Values / 2.9 Conversions]
+	// Page 44
+	void p44_Conversions()
+	{
+		TRACE_FUNCTION;
+
+		char c = 'x';
+		int i1 = c; // i1 gets the integer value of c
+		int i2 = c + 1000; // i2 gets the integer value of c added to 1000
+		double d = i2 + 7.3; // d gets the floating-point value of i2 plus 7.3
+
+		cout << "c: " << c << ", i1: " << i1 << ", i2: " << i2 << ", d: " << d << '\n';
+
+	}
+
+
+	// This showcases narrowing conversions, which can lead to loss of data
+	// [Objects, Types and Values / 2.9 Conversions]
+	// Page 45
+	void p45_NarrowingConversions()
+	{
+		TRACE_FUNCTION;
+
+		double d = 0;
+		while (cin >> d) { // repeat the statements below as long as we type in numbers
+			int i = d; // try to squeeze a floating-point value into an integer value
+			char c = i; // try to squeeze an integer into a char
+			cout << "d==" << d // the original double
+				<< " i==" << i // double converted to int
+				<< " c==" << int(c) // int value of char
+				<< " char(" << c << ")\n"; // the char
+		}
+
+
+		// If we really need narrowing we can use narrow<T>(x) 
+		// and when we need rounding we can use round_to<int>(x)
+		//narrow<int>(d);
+		//round_to<int>(d);
 
 	}
 

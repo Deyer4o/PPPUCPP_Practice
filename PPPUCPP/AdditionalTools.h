@@ -2,7 +2,6 @@
 // This is Added so that you can easily keep track of every function being called by using "TRACE_FUNCTION;" from within any function.
 
 #pragma once // Makes sure this is included only once
-import std; // Gain access to the C++ standard library (Importing the iostream module for input and output operations)
 #include "Includes.h"
 
 const char* _curNamespace = "";
@@ -15,7 +14,7 @@ const char* _curNamespace = "";
 #define TRACE_NAMESPACE(ns) const char* _curNamespace = ns; // Set the current namespace to Chapter1
 #else // If TRACE is not defined, do nothing
 #define TRACE_FUNCTION ; // Empty macro for FunctionTracer
-#define TRACE_NAMESPACE(ns) // Empty macro for namespace
+#define TRACE_NAMESPACE(ns) ;// Empty macro for namespace
 #endif // End of TRACE definition
 
 class FunctionTracer { // creating a FunctionTracer class
