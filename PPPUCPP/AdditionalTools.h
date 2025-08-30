@@ -2,8 +2,12 @@
 // This is Added so that you can easily keep track of every function being called by using "TRACE_FUNCTION;" from within any function.
 
 #pragma once // Makes sure this is included only once
+
 #include "Includes.h"
 
+bool ENABLE_TRACE_BOOL = false;
+#define ENABLE_TRACE ENABLE_TRACE_BOOL = true; TRACE_FUNCTION; USING_S1_NAMESPACES;
+using namespace std;			// Allows us to use standard library features without the std:: prefix
 const char* _curNamespace = "";
 
 #define C(n) using namespace n;
