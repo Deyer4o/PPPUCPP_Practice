@@ -6,6 +6,7 @@
 // Objects, Types and Values (Pages 29 to 50)
 namespace Chapter2
 {
+	
 	TRACE_NAMESPACE("Chapter2");
 
 	// This asks for and prints the first name of the user
@@ -132,13 +133,13 @@ namespace Chapter2
 		//////////////////////////////////////////////////////////////////////////////////////////////
 
 		// Output the result
-		cout << "Age: " << years << " years, " << months << " months, " << days << " days" << endl << endl;
+		std::cout << "Age: " << years << " years, " << months << " months, " << days << " days" << std::endl << std::endl;
 
-		cout << "total months: \t" << (years * 12 + months) << " months" << endl;
-		cout << "total days: \t" << (years * 365 + months * 30 + days) << " days" << endl; // Approximation, not accounting for leap years
-		cout << "total hours: \t" << (years * 365 * 24 + months * 30 * 24 + days * 24) << " hours" << endl; // Approximation, not accounting for leap years
-		cout << "total minutes: \t" << (years * 365 * 24 * 60 + months * 30 * 24 * 60 + days * 24 * 60) << " minutes" << endl; // Approximation, not accounting for leap years
-		cout << "total seconds: \t" << (years * 365 * 24 * 60 * 60 + months * 30 * 24 * 60 * 60 + days * 24 * 60 * 60) << " seconds" << endl; // Approximation, not accounting for leap years
+		std::cout << "total months: \t" << (years * 12 + months) << " months" << std::endl;
+		std::cout << "total days: \t" << (years * 365 + months * 30 + days) << " days" << std::endl; // Approximation, not accounting for leap years
+		std::cout << "total hours: \t" << (years * 365 * 24 + months * 30 * 24 + days * 24) << " hours" << std::endl; // Approximation, not accounting for leap years
+		std::cout << "total minutes: \t" << (years * 365 * 24 * 60 + months * 30 * 24 * 60 + days * 24 * 60) << " minutes" << endl; // Approximation, not accounting for leap years
+		std::cout << "total seconds: \t" << (years * 365 * 24 * 60 * 60 + months * 30 * 24 * 60 * 60 + days * 24 * 60 * 60) << " seconds" << endl; // Approximation, not accounting for leap years
 		return;
 	}
 
@@ -152,10 +153,10 @@ namespace Chapter2
 		TRACE_FUNCTION;
 		using namespace std;
 
-		cout << "Please enter a floating-point value: ";
+		std::cout << "Please enter a floating-point value: ";
 		double n = 0;
-		cin >> n;
-		cout << "n == " << n
+		std::cin >> n;
+		std::cout << "n == " << n
 			<< "\nn+1 == " << n + 1
 			<< "\nthree times n == " << 3 * n
 			<< "\ntwice n == " << n + n
@@ -174,10 +175,10 @@ namespace Chapter2
 		TRACE_FUNCTION;
 		using namespace std;
 
-		cout << "Please enter an integer value: ";
+		std::cout << "Please enter an integer value: ";
 		int n = 0;
-		cin >> n;
-		cout << "n == " << n
+		std::cin >> n;
+		std::cout << "n == " << n
 			<< "\nn+1 == " << n + 1
 			<< "\nthree times n == " << 3 * n
 			<< "\ntwice n == " << n + n
@@ -197,12 +198,12 @@ namespace Chapter2
 	{
 		TRACE_FUNCTION;
 
-		cout << "Please enter your first and second names\n";
-		string first;
-		string second;
-		cin >> first >> second; // read two strings
-		string name = first + ' ' + second; // concatenate strings
-		cout << "Hello, " << name << '\n';
+		std::cout << "Please enter your first and second names\n";
+		std::string first;
+		std::string second;
+		std::cin >> first >> second; // read two strings
+		std::string name = first + ' ' + second; // concatenate strings
+		std::cout << "Hello, " << name << '\n';
 	}
 
 
@@ -213,16 +214,16 @@ namespace Chapter2
 	{
 		TRACE_FUNCTION;
 
-		cout << "Please enter two names\n";
-		string first;
-		string second;
-		cin >> first >> second; // read two strings
+		std::cout << "Please enter two names\n";
+		std::string first;
+		std::string second;
+		std::cin >> first >> second; // read two strings
 		if (first == second)
-			cout << "that's the same name twice\n";
+			std::cout << "that's the same name twice\n";
 		if (first < second)
-			cout << first << " is alphabetically before " << second << '\n';
+			std::cout << first << " is alphabetically before " << second << '\n';
 		if (first > second)
-			cout << first << " is alphabetically after " << second << '\n';
+			std::cout << first << " is alphabetically after " << second << '\n';
 	}
 
 
@@ -233,11 +234,11 @@ namespace Chapter2
 	{
 		TRACE_FUNCTION;
 
-		string previous; // previous word; initialized to ""
-		string current; // current word
-		while (cin >> current) { // read a stream of words
+		std::string previous; // previous word; initialized to ""
+		std::string current; // current word
+		while (std::cin >> current) { // read a stream of words
 			if (previous == current) // check if the word is the same as last
-				cout << "repeated word: " << current << '\n';
+				std::cout << "repeated word: " << current << '\n';
 			previous = current;
 		}
 
@@ -259,12 +260,12 @@ namespace Chapter2
 		TRACE_FUNCTION;
 
 		int number_of_words = 0;
-		string previous; // previous word; initialized to ""
-		string current;
-		while (cin >> current) {
+		std::string previous; // previous word; initialized to ""
+		std::string current;
+		while (std::cin >> current) {
 			++number_of_words; // increase word count - composite assignment opperator
 			if (previous == current)
-				cout << "word number " << number_of_words << " repeated: " << current << '\n';
+				std::cout << "word number " << number_of_words << " repeated: " << current << '\n';
 			previous = current;
 		}
 	}
@@ -285,8 +286,8 @@ namespace Chapter2
 	}
 	*/
 
-		string s = "Hello, beautiful world! "; //string- not STRING
-		cout << s << '\n';// cout - not cOut , s - not S
+		std::string s = "Hello, beautiful world! "; //string- not STRING
+		std::cout << s << '\n';// cout - not cOut , s - not S
 
 	}
 	
@@ -319,7 +320,7 @@ namespace Chapter2
 		int i2 = c + 1000; // i2 gets the integer value of c added to 1000
 		double d = i2 + 7.3; // d gets the floating-point value of i2 plus 7.3
 
-		cout << "c: " << c << ", i1: " << i1 << ", i2: " << i2 << ", d: " << d << '\n';
+		std::cout << "c: " << c << ", i1: " << i1 << ", i2: " << i2 << ", d: " << d << '\n';
 
 	}
 
@@ -332,10 +333,10 @@ namespace Chapter2
 		TRACE_FUNCTION;
 
 		double d = 0;
-		while (cin >> d) { // repeat the statements below as long as we type in numbers
+		while (std::cin >> d) { // repeat the statements below as long as we type in numbers
 			int i = d; // try to squeeze a floating-point value into an integer value
 			char c = i; // try to squeeze an integer into a char
-			cout << "d==" << d // the original double
+			std::cout << "d==" << d // the original double
 				<< " i==" << i // double converted to int
 				<< " c==" << int(c) // int value of char
 				<< " char(" << c << ")\n"; // the char
@@ -366,9 +367,9 @@ namespace Chapter2
 
 		int x = 7;
 		double d = 7.7;
-		string s = "Hello, World\n";
-		vector v = { 1, 2, 3, 5, 8 }; // see §17.3
-		pair p{ "Hello",17 }; // see §20.2.2
+		std::string s = "Hello, World\n";
+		std::vector v = { 1, 2, 3, 5, 8 }; // see §17.3
+		std::pair p{ "Hello",17 }; // see §20.2.2
 
 	}
 
@@ -404,21 +405,21 @@ namespace Chapter2
 	{
 		TRACE_FUNCTION;
 
-		string first_name, last_name, receiver_name, message, friend_name = "";
+		std::string first_name, last_name, receiver_name, message, friend_name = "";
 		int age_of_receiver = 0;
 
-		cout << "Please enter your first name:\n";
-		cin >> first_name;
-		cout << "Please enter your last name:\n";
-		cin >> last_name;
-		cout << "Please enter the receiver's name:\n";
-		cin >> receiver_name;
-		cout << "Your common friend's name:\n";
-		cin >> friend_name;
-		cout << "Please enter the age of the receiver:\n";
-		cin >> age_of_receiver;
+		std::cout << "Please enter your first name:\n";
+		std::cin >> first_name;
+		std::cout << "Please enter your last name:\n";
+		std::cin >> last_name;
+		std::cout << "Please enter the receiver's name:\n";
+		std::cin >> receiver_name;
+		std::cout << "Your common friend's name:\n";
+		std::cin >> friend_name;
+		std::cout << "Please enter the age of the receiver:\n";
+		std::cin >> age_of_receiver;
 
-		cout << "Please enter the message you want to send:\n";
+		std::cout << "Please enter the message you want to send:\n";
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, message);
 
@@ -428,15 +429,15 @@ namespace Chapter2
 		•	Otherwise, std::getline will just read an empty string.
 		*/
 
-		cout << "\nDear " << receiver_name << ",\n\n"
+		std::cout << "\nDear " << receiver_name << ",\n\n"
 			<< "\tHow are you? I am fine. I miss you.\n"
 			<< "I hear you just had a birthday and you are " << age_of_receiver << " years old.";
 
 		if (age_of_receiver <=0 || age_of_receiver >=110) simple_error("you're kidding!");
-		else if (age_of_receiver < 12) cout << " Next year you will be " << age_of_receiver + 1 << " years old! " ;
-		else if (age_of_receiver == 17) cout << " Next year you will be able to vote!";
-		else if (age_of_receiver > 70) cout << " YAre you retired?";
-		cout<< message << "\n\n"
+		else if (age_of_receiver < 12) std::cout << " Next year you will be " << age_of_receiver + 1 << " years old! ";
+		else if (age_of_receiver == 17) std::cout << " Next year you will be able to vote!";
+		else if (age_of_receiver > 70) std::cout << " YAre you retired?";
+		std::cout<< message << "\n\n"
 			<< "Have you seen" << friend_name << "lately ? \n"
 			<< "Yours sincerely,\n\n\n"
 			<< first_name << " " << last_name << "\n";
@@ -450,7 +451,7 @@ namespace Chapter2
 	void p_48_Review()
 	{
 		TRACE_FUNCTION;
-		cout << "This is a review of the previous sections.												   "
+		std::cout << "This is a review of the previous sections.												   "
 
 			<< "[1] What is meant by the term prompt ?													   "
 			<< "\n\tA prompt is a message displayed to the user, asking for input or action.			   "
@@ -561,7 +562,7 @@ namespace Chapter2
 
 			<< "\n[27] What are the uses of auto ?														   "
 			<< "\n\tThe auto keyword is used to automatically deduce the type of a variable based on its initializer. ";
-			cout << "\n\nEnd of review.\n";
+			std::cout << "\n\nEnd of review.\n";
 	}
 
 
@@ -572,7 +573,7 @@ namespace Chapter2
 	{
 		TRACE_FUNCTION;
 		
-		cout << "assignment" << " \t - To assign a value to a variable using the = operator.\n"
+		std::cout << "assignment" << " \t - To assign a value to a variable using the = operator.\n"
 			<< "increment" << " \t - To increase the value of a variable by 1 using the ++ operator.\n"
 			<< "type" << " \t - The classification of data that determines the kind of values a variable can hold, such as int, double, char, etc.\n"
 			<< "declaration" << " \t - The statement that introduces a variable or function, specifying its name and type, but not necessarily allocating storage or initializing it.\n"
@@ -610,7 +611,7 @@ namespace Chapter2
 	// Page 49
 	void p49_Exercise_1() {
 		TRACE_FUNCTION;
-		cout << "Check TRY_THIS functions above";
+		std::cout << "Check TRY_THIS functions above";
 	}
 
 
@@ -619,31 +620,31 @@ namespace Chapter2
 	// Page 49
 	void p49_Exercise_2() {
 		TRACE_FUNCTION;
-		
-		cout << "Measurement conversion program\n"
+
+		std::cout << "Measurement conversion program\n"
 			<< "Choose a conversion type:\n"
 			<< "1. Miles to KM\n"
 			<< "2. KM to Miles\n"
 			<< "Enter your choice (1 or 2): ";
 
 		int choice;
-		cin >> choice;
+		std::cin >> choice;
 		if (choice == 1) {
 			double miles;
-			cout << "Enter distance in miles: ";
-			cin >> miles;
+			std::cout << "Enter distance in miles: ";
+			std::cin >> miles;
 			double km = miles * 1.60934; // 1 mile = 1.60934 km
-			cout << miles << " miles is equal to " << km << " kilometers.\n";
+			std::cout << miles << " miles is equal to " << km << " kilometers.\n";
 		}
 		else if (choice == 2) {
 			double km;
-			cout << "Enter distance in kilometers: ";
-			cin >> km;
+			std::cout << "Enter distance in kilometers: ";
+			std::cin >> km;
 			double miles = km / 1.60934; // 1 km = 0.621371 miles
-			cout << km << " kilometers is equal to " << miles << " miles.\n";
+			std::cout << km << " kilometers is equal to " << miles << " miles.\n";
 		}
 		else {
-			cout << "Invalid choice. Please enter 1 or 2.\n";
+			std::cout << "Invalid choice. Please enter 1 or 2.\n";
 		}
 		
 	}
@@ -661,9 +662,9 @@ namespace Chapter2
 		// int invalid-variable = 2; // illegal name: contains a hyphen
 		int validVariable = 3; // legal name: camelCase
 		// int double = 4; // illegal name: 'double' is a keyword
-		cout << "Declared variables with legal names. Uncomment the illegal ones to see compiler errors.\n";
-		cout << "Valid variable names: valid_variable, _valid_variable, validVariable\n";
-		cout << "Illegal variable names: 1st_variable (starts with a digit), invalid-variable (contains a hyphen), double (keyword)\n";
+		std::cout << "Declared variables with legal names. Uncomment the illegal ones to see compiler errors.\n";
+		std::cout << "Valid variable names: valid_variable, _valid_variable, validVariable\n";
+		std::cout << "Illegal variable names: 1st_variable (starts with a digit), invalid-variable (contains a hyphen), double (keyword)\n";
 	}
 
 
@@ -674,15 +675,15 @@ namespace Chapter2
 		TRACE_FUNCTION;
 			
 		int val1, val2;
-		cout << "Please enter two integer values:\n";
-		cin >> val1 >> val2;
+		std::cout << "Please enter two integer values:\n";
+		std::cin >> val1 >> val2;
 		int smaller = (val1 < val2) ? val1 : val2;
 		int larger = (val1 > val2) ? val1 : val2;
 		int sum = val1 + val2;
 		int difference = abs(val1 - val2);
 		int product = val1 * val2;
 		int ratio = (val2 != 0) ? val1 / val2 : 0; // avoid division by zero
-		cout << "Smaller: " << smaller << "\n"
+		std::cout << "Smaller: " << smaller << "\n"
 			<< "Larger: " << larger << "\n"
 			<< "Sum: " << sum << "\n"
 			<< "Difference: " << difference << "\n"
@@ -713,15 +714,15 @@ namespace Chapter2
 		TRACE_FUNCTION;
 
 		double val1, val2;
-		cout << "Please enter two floating-point values:\n";
-		cin >> val1 >> val2;
+		std::cout << "Please enter two floating-point values:\n";
+		std::cin >> val1 >> val2;
 		double smaller = (val1 < val2) ? val1 : val2;
 		double larger = (val1 > val2) ? val1 : val2;
 		double sum = val1 + val2;
 		double difference = abs(val1 - val2);
 		double product = val1 * val2;
 		double ratio = (val2 != 0) ? val1 / val2 : 0; // avoid division by zero
-		cout << "Smaller: " << smaller << "\n"
+		std::cout << "Smaller: " << smaller << "\n"
 			<< "Larger: " << larger << "\n"
 			<< "Sum: " << sum << "\n"
 			<< "Difference: " << difference << "\n"
@@ -753,13 +754,13 @@ namespace Chapter2
 		
 
 		int a, b, c;
-		cout << "Please enter three integer values:\n";
-		cin >> a >> b >> c;
+		std::cout << "Please enter three integer values:\n";
+		std::cin >> a >> b >> c;
 		// Sort the values
-		if (a > b) swap(a, b);
-		if (a > c) swap(a, c);
-		if (b > c) swap(b, c);
-		cout << "Sorted values: " << a << ", " << b << ", " << c << "\n";
+		if (a > b) std::swap(a, b);
+		if (a > c) std::swap(a, c);
+		if (b > c) std::swap(b, c);
+		std::cout << "Sorted values: " << a << ", " << b << ", " << c << "\n";
 
 		/*
 		swap(a, b);
@@ -782,14 +783,14 @@ namespace Chapter2
 	void p49_Exercise_7() {
 		TRACE_FUNCTION;
 		
-		string a, b, c;
-		cout << "Please enter three string values:\n";
-		cin >> a >> b >> c;
+		std::string a, b, c;
+		std::cout << "Please enter three string values:\n";
+		std::cin >> a >> b >> c;
 		// Sort the values
 		if (a > b) swap(a, b);
 		if (a > c) swap(a, c);
 		if (b > c) swap(b, c);
-		cout << "Sorted values: " << a << ", " << b << ", " << c << "\n";
+		std::cout << "Sorted values: " << a << ", " << b << ", " << c << "\n";
 		
 	}
 
@@ -801,13 +802,13 @@ namespace Chapter2
 		TRACE_FUNCTION;
 
 		int number;
-		cout << "Please enter an integer value:\n";
-		cin >> number;
+		std::cout << "Please enter an integer value:\n";
+		std::cin >> number;
 		if (number % 2 == 0) {
-			cout << "The value " << number << " is an even number.\n";
+			std::cout << "The value " << number << " is an even number.\n";
 		}
 		else {
-			cout << "The value " << number << " is an odd number.\n";
+			std::cout << "The value " << number << " is an odd number.\n";
 		}
 
 	}
@@ -819,26 +820,26 @@ namespace Chapter2
 	void p49_Exercise_9() {
 		TRACE_FUNCTION;
 
-		string input;
-		cout << "Please enter a spelled-out number (zero, one, two, three, four):\n";
-		cin >> input;
+		std::string input;
+		std::cout << "Please enter a spelled-out number (zero, one, two, three, four):\n";
+		std::cin >> input;
 		if (input == "zero") {
-			cout << "0\n";
+			std::cout << "0\n";
 		}
 		else if (input == "one") {
-			cout << "1\n";
+			std::cout << "1\n";
 		}
 		else if (input == "two") {
-			cout << "2\n";
+			std::cout << "2\n";
 		}
 		else if (input == "three") {
-			cout << "3\n";
+			std::cout << "3\n";
 		}
 		else if (input == "four") {
-			cout << "4\n";
+			std::cout << "4\n";
 		}
 		else {
-			cout << "Not a number I know!\n";
+			std::cout << "Not a number I know!\n";
 		}
 	}
 
@@ -850,28 +851,28 @@ namespace Chapter2
 		TRACE_FUNCTION;
 		
 		double operand1, operand2;
-		string operation;
-		cout << "Please enter an operation followed by two operands (e.g., + 100 3.14):\n";
-		cin >> operation >> operand1 >> operand2;
+		std::string operation;
+		std::cout << "Please enter an operation followed by two operands (e.g., + 100 3.14):\n";
+		std::cin >> operation >> operand1 >> operand2;
 		if (operation == "+" || operation == "plus") {
-			cout << "Result: " << (operand1 + operand2) << "\n";
+			std::cout << "Result: " << (operand1 + operand2) << "\n";
 		}
 		else if (operation == "-" || operation == "minus") {
-			cout << "Result: " << (operand1 - operand2) << "\n";
+			std::cout << "Result: " << (operand1 - operand2) << "\n";
 		}
 		else if (operation == "*" || operation == "mul") {
-			cout << "Result: " << (operand1 * operand2) << "\n";
+			std::cout << "Result: " << (operand1 * operand2) << "\n";
 		}
 		else if (operation == "/" || operation == "div") {
 			if (operand2 != 0) {
-				cout << "Result: " << (operand1 / operand2) << "\n";
+				std::cout << "Result: " << (operand1 / operand2) << "\n";
 			}
 			else {
-				cout << "Error: Division by zero is not allowed.\n";
+				std::cout << "Error: Division by zero is not allowed.\n";
 			}
 		}
 		else {
-			cout << "Unknown operation!\n";
+			std::cout << "Unknown operation!\n";
 		}
 
 
@@ -886,29 +887,29 @@ namespace Chapter2
 		
 		
 		int pennies, nickels, dimes, quarters, half_dollars, one_dollar_coins;
-		cout << "Please enter the number of coins you have:\n";
-		cout << "Pennies: ";
-		cin >> pennies;
-		cout << "Nickels: ";
-		cin >> nickels;
-		cout << "Dimes: ";
-		cin >> dimes;
-		cout << "Quarters: ";
-		cin >> quarters;
-		cout << "Half Dollars: ";
-		cin >> half_dollars;
-		cout << "One Dollar Coins: ";
-		cin >> one_dollar_coins;
+		std::cout << "Please enter the number of coins you have:\n";
+		std::cout << "Pennies: ";
+		std::cin >> pennies;
+		std::cout << "Nickels: ";
+		std::cin >> nickels;
+		std::cout << "Dimes: ";
+		std::cin >> dimes;
+		std::cout << "Quarters: ";
+		std::cin >> quarters;
+		std::cout << "Half Dollars: ";
+		std::cin >> half_dollars;
+		std::cout << "One Dollar Coins: ";
+		std::cin >> one_dollar_coins;
 		int total_cents = pennies + 5 * nickels + 10 * dimes + 25 * quarters + 50 * half_dollars + 100 * one_dollar_coins;
 		double total_dollars = total_cents / 100.0;
-		cout << "You have " << pennies << " penny" << (pennies != 1 ? "s" : "") << ".\n"
+		std::cout << "You have " << pennies << " penny" << (pennies != 1 ? "s" : "") << ".\n"
 			<< "You have " << nickels << " nickel" << (nickels != 1 ? "s" : "") << ".\n"
 			<< "You have " << dimes << " dime" << (dimes != 1 ? "s" : "") << ".\n"
 			<< "You have " << quarters << " quarter" << (quarters != 1 ? "s" : "") << ".\n"
 			<< "You have " << half_dollars << " half dollar" << (half_dollars != 1 ? "s" : "") << ".\n"
 			<< "You have " << one_dollar_coins << " one dollar coin" << (one_dollar_coins != 1 ? "s" : "") << ".\n"
 			<< "The value of all of your coins is " << total_cents << " cents or $"
-			<< fixed << setprecision(2) << total_dollars << ".\n";
+			<< std::fixed << std::setprecision(2) << total_dollars << ".\n";
 
 		/*
 		fixed: Formats floating-point numbers in fixed-point notation with a set number of decimal places.

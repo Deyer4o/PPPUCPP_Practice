@@ -53,18 +53,18 @@ typedef long Unicode;
 
 //------------------------------------------------------------------------------
 
-using namespace std;
+//using namespace std; // This is bad practice in a header file - it was removed for clarity - Deyan Mohamed
 
-template<class T> string to_string(const T& t)
+template<class T> std::string to_string(const T& t)
 {
-	ostringstream os;
+	std::ostringstream os;
 	os << t;
 	return os.str();
 }
 
-struct Range_error : out_of_range {	// enhanced vector range error reporting
+struct Range_error : std::out_of_range {	// enhanced vector range error reporting
 	int index;
-	Range_error(int i) :out_of_range("Range error: " + to_string(i)), index(i) {}
+	Range_error(int i) :std::out_of_range("Range error: " + to_string(i)), index(i) {}
 };
 
 
@@ -130,24 +130,24 @@ namespace std {
 } // of namespace std
 
 
-struct Exit : runtime_error {
-	Exit() : runtime_error("Exit") {}
+struct Exit : std::runtime_error {
+	Exit() : std::runtime_error("Exit") {}
 };
 
 // error() simply disguises throws:
-inline void error(const string& s)
+inline void error(const std::string& s)
 {
-	throw runtime_error(s);
+	throw std::runtime_error(s);
 }
 
-inline void error(const string& s, const string& s2)
+inline void error(const std::string& s, const std::string& s2)
 {
 	error(s + s2);
 }
 
-inline void error(const string& s, int i)
+inline void error(const std::string& s, int i)
 {
-	ostringstream os;
+	std::ostringstream os;
 	os << s << ": " << i;
 	error(os.str());
 }
@@ -163,23 +163,23 @@ template<class T> char* as_bytes(T& i)	// needed for binary I/O
 
 inline void keep_window_open()
 {
-	cin.clear();
-	cout << "Please enter a character to exit\n";
+	std::cin.clear();
+	std::cout << "Please enter a character to exit\n";
 	char ch;
-	cin >> ch;
+	std::cin >> ch;
 	return;
 }
 
-inline void keep_window_open(string s)
+inline void keep_window_open(std::string s)
 {
 	if (s == "") return;
-	cin.clear();
-	cin.ignore(120, '\n');
+	std::cin.clear();
+	std::cin.ignore(120, '\n');
 	for (;;) {
-		cout << "Please enter " << s << " to exit\n";
-		string ss;
-		while (cin >> ss && ss != s)
-			cout << "Please enter " << s << " to exit\n";
+		std::cout << "Please enter " << s << " to exit\n";
+		std::string ss;
+		while (std::cin >> ss && ss != s)
+			std::cout << "Please enter " << s << " to exit\n";
 		return;
 	}
 }
@@ -187,9 +187,9 @@ inline void keep_window_open(string s)
 
 
 // error function to be used (only) until error() is introduced in Chapter 5:
-inline void simple_error(string s)	// write ``error: s and exit program
+inline void simple_error(std::string s)	// write ``error: s and exit program
 {
-	cerr << "error: " << s << '\n';
+	std::cerr << "error: " << s << '\n';
 	keep_window_open();		// for some Windows environments
 	exit(1);
 }
@@ -203,21 +203,21 @@ inline void simple_error(string s)	// write ``error: s and exit program
 template<class R, class A> R narrow_cast(const A& a)
 {
 	R r = R(a);
-	if (A(r) != a) error(string("info loss"));
+	if (A(r) != a) error(std::string("info loss"));
 	return r;
 }
 
 // random number generators. See 24.7.
 
-inline default_random_engine& get_rand()
+inline std::default_random_engine& get_rand()
 {
-	static default_random_engine ran;	// note: not thread_local
+	static std::default_random_engine ran;	// note: not thread_local
 	return ran;
 };
 
 inline void seed_randint(int s) { get_rand().seed(s); }
 
-inline int randint(int min, int max) { return uniform_int_distribution<>{min, max}(get_rand()); }
+inline int randint(int min, int max) { return std::uniform_int_distribution<>{min, max}(get_rand()); }
 
 inline int randint(int max) { return randint(0, max); }
 
